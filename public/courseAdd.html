@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    
+    <title>Admin Registration Form</title>
+    <style>
+        body{
+            background-color:rgb(88, 50, 50);
+        }
+    </style>
+  </head>
+
+  <script>  
+    function validateform(){  
+        var professor=document.myform.name.value;  
+        var description=document.myform.description.value;  
+        var num=document.myform.semester.value; 
+        
+        
+        if (professor==null || professor==""){  
+          alert("professor can't be blank");  
+          return false;  
+        }else if(description == null || description =="")
+        {alert("description can't be blank");  
+          return false; }
+          else if(semester == null || semester =="")
+        {alert("semester can't be blank");  
+          return false; }
+        if (isNaN(num)){ 
+            document.getElementById("numloc").innerHTML="Enter Numeric value only";  
+            return false;  
+        }else{  
+        return true;  
+        } 
+    }      
+    </script>  
+  <body></body>
+    <div>
+        <form name="myform" method="post" action="http://www.javatpoint.com/javascriptpages/valid.jsp" onsubmit="return validateform()" >  
+            Professor:<input type="text" name="professor"><br/>  
+            Description: <input type="text" name="description"><br/>  
+            Semester:<input type ="number" name = "semester"><br/>
+            <input type="submit" value="register">  
+        </form>
+    </div> 
+    <div id="root"></div>
+  </body>
+</html>
